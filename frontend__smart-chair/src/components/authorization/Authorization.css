@@ -1,0 +1,31 @@
+@import url(../../colors.css);
+
+.Authorization{
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.Authorization__container{
+    
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.Authorization__container > *{
+    margin: .5em;
+}
+
+.Authorization__form{
+    min-width: 320px;
+}
+
+@media screen and (max-width: 740px) {
+    .Authorization__container{
+        flex-wrap: wrap;
+    }
+}

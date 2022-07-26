@@ -1,0 +1,23 @@
+/* файл с основными цветами в проекте (пробный) */
+
+body{
+    --bg-primary-color: #0231A1;
+    --bg-secondary-color: #20183b;
+    --white-color: #FAFAFA;
+    --gray-color: #ecececd9;
+
+    --good-color: #026537;
+    --attention-color: yellow;
+    --danger-color: #9D0000;
+}
+.bg-primary {
+    background: #0231A1;
+}
+
+.bg-secondary {
+    background: #20183B;
+}
+
+.bg-btn {
+    background: #FF6400;
+}

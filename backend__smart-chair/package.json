@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
+  "main": "index.js",
+  "scripts": {
+    "serv": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/kvantoriumchel/smart-chair/backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/kvantoriumchel/smart-chair/backend/issues"
+  },
+  "homepage": "https://gitlab.com/kvantoriumchel/smart-chair/backend#readme",
+  "dependencies": {
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "mongodb": "^4.2.1",
+    "mongoose": "^6.1.5",
+    "mqtt": "^4.2.8",
+    "nodemon": "^2.0.15"
+  }
+}

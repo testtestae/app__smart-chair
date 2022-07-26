@@ -1,0 +1,71 @@
+@import url(./colors.css);
+
+body{
+    background-color: var(--bg-secondary-color);
+}
+
+.App{
+    height: 100%;
+    color: var(--white-color);
+}
+    
+.Button {
+    background-color: #FA5A04;
+    border: 2px solid black;
+    border-radius: 10px;
+
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    
+    /* line-height: 40px; */
+    /* text-align: right; */
+    color: #FFFFFF;
+    height: 50px;
+    width: 170px
+}
+
+.form{
+    background-color: var(--bg-primary-color);
+    padding: 1em;
+    border-radius: .5em;
+
+    padding-top: 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.form > * {
+    margin: .75em .5em;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.form > label {
+    width: 80%;
+    text-align: left;
+    font-size: 1,5rem;
+    margin-bottom: 0;
+    transform: translateX(-1rem);
+}
+
+.form > input, .form > select {
+    margin-top: .125em;
+    width: 80%;
+    color: rgb(1, 1, 156);
+    font-size: 2rem;
+    border-radius: .5rem;
+}
+
+.bounding_container{
+    height: 100%;
+    
+    max-width: 992px;
+    width: 100%;
+}
+

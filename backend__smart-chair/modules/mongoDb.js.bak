@@ -1,0 +1,77 @@
+const config = require('config')
+const mongoose = require('mongoose');
+
+const uri = `mongodb+srv://${config.get('db.username')}:${config.get('db.password')}@cluster0.r2ddi.mongodb.net/chair?retryWrites=true&w=majority`
+mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
+
+// mongoose.Promise = global.Promise;
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+db.once('open', ()=>{
+    console.log("MongoDB database connection established successfully");
+})
+
+
+// const educationOrganizationSchema = mongoose.Schema({}, {strict: false})
+// const EducationOrganization = mongoose.model('School', educationOrganizationSchema)
+
+// const userSchema = mongoose.Schema({}, {strict: false})  
+// const User = mongoose.model('User', userSchema)
+
+// const chairSchema = mongoose.Schema({}, {strict: false})
+// const Chair = mongoose.model('Chair', chairSchema)
+
+
+const dbMethods = {
+    educationOrganizationCreate: (educationOrganizationInfo) => {
+        const {aboutOfEducationOrganization, classGroups} = educationOrganizationInfo; //aboutOfEducationOrganization = {country, city, typeOfEducationalOrganization, educationOrganizationName, educationOrganizationSubname ...}
+        const educationOrganization = new EducationOrganization({aboutOfEducationOrganization, classGroups})
+    
+        educationOrganization.save((err, org) => {
+            if (err) {
+            console.log('err', err)
+            }
+            console.log('saved education organization', org)
+        })
+    },
+
+    addUser: (userData) => {
+        const {firstName, secondName, classGroup, username} = userData;
+        const user = new User({firstName, secondName, classGroup, username, roles:["child"]})
+    
+        user.save((err, user) => {
+            if (err) {
+            console.log('err', err)
+            }
+            console.log('saved user', user)
+        })
+    },
+    
+    addChair: (sn) => {
+        const chair = new Chair({sn})
+    
+        chair.save((err, chair) => {
+            if (err) {
+            console.log('err', err)
+            }
+            console.log('saved user', chair)
+        })
+    },
+    
+    userList: ()=>{
+        User.find({}, (err, users) => {
+            console.log(users);
+            return users
+        })
+    },
+
+    chairList: ()=>{
+        Chair.find({}, (err, users) => {
+            console.log(users);
+        })
+    }
+}
+
+module.exports = {...dbMethods};

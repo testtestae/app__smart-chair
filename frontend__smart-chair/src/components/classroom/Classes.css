@@ -1,0 +1,8 @@
+/* css-стили для Classes.jsx */
+.cls {
+    background: #c71919;
+}
+
+.cls__text {
+    color: #ececec;
+}

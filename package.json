@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "servInst": "cd ./backend__smart-chair & npm i",
+    "frontInst": "cd ./frontend__smart-chair/ & npm i",
+    "changeBranches": "cd ./frontend__smart-chair/ && git checkout dev && cd ../",
+    "devInst": "npm i && npm run changeBranches && npm run frontInst && npm run servInst",
+
+    "serv": "npm --prefix ./backend__smart-chair run serv",
+    "front": "npm --prefix ./frontend__smart-chair/ start",
+    "dev": "concurrently --kill-others \"npm run front\" \"npm run serv\""
+
+  },
+  "dependencies": {
+    "concurrently": "7.0.0"
+  }
+}

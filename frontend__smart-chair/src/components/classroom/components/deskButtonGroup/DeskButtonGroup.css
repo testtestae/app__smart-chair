@@ -1,0 +1,21 @@
+@import url(../../../../colors.css);
+
+.card {
+    background-color: var(--bg-primary-color);
+    display: inline-block;
+    padding: .5em;
+    margin: .5em;
+    border-radius: .5em;
+}
+
+.card__title {
+    margin: 0;
+}
+
+.card__chairs {
+    display: flex;
+}
+
+.card__chairs > * {
+    margin: .25em;
+}
